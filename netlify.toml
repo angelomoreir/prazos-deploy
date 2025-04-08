@@ -1,0 +1,22 @@
+[build]
+  base = "/"
+  publish = "static_site"
+  command = "python app.py init_db"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/prazos"
+  to = "/admin_prazos.html"
+  status = 200
+
+[build.environment]
+  NETLIFY = "true"

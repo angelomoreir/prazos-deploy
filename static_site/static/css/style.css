@@ -1,0 +1,179 @@
+/* Estilos gerais */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 2rem;
+}
+
+/* Card principal */
+.card:not(#resultado) {
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    min-height: 600px; /* Altura padrão */
+}
+
+.card-header {
+    font-weight: 500;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    padding: 25px;
+    min-height: 400px; /* Altura padrão */
+}
+
+/* Card de resultados */
+#resultado .card {
+    min-height: auto;
+}
+
+/* Altura específica para o card "Adicionar Novo Cliente" */
+.card-novo-cliente {
+    min-height: 320px !important;
+}
+
+.card-novo-cliente .card-body {
+    min-height: 220px !important;
+}
+
+/* Altura específica para o card "Adicionar Novo Prazo de Pagamento" */
+.card-novo-prazo {
+    min-height: 320px !important;
+}
+
+.card-novo-prazo .card-body {
+    min-height: 220px !important;
+}
+
+/* Aumentar tamanho dos elementos dentro do card */
+.card .form-label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.card .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* Estilos para o campo de busca e sugestões */
+#sugestoes {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    max-width: 500px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 8px 8px;
+    background-color: white;
+    scrollbar-width: thin;
+    scrollbar-color: #6c757d #f8f9fa;
+    margin-top: 5px;
+}
+
+/* Estilização da barra de rolagem para Chrome, Edge e Safari */
+#sugestoes::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sugestoes::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 0 0 8px 0;
+}
+
+#sugestoes::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border-radius: 20px;
+    border: 1px solid #f8f9fa;
+}
+
+/* Indicador visual de que há mais conteúdo para rolagem */
+#sugestoes::after {
+    content: '';
+    display: block;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.sugestao-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 10px 15px; /* Aumentado o padding para melhor legibilidade */
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95rem; /* Ajustando o tamanho do texto */
+}
+
+.sugestao-item:hover {
+    background-color: #e9ecef;
+}
+
+.sugestao-item.active {
+    background-color: #cfe2ff;
+    border-left: 3px solid #0d6efd;
+}
+
+.sugestao-item strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.sugestao-item small {
+    display: block;
+    color: #6c757d;
+    margin-top: 1px;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+/* Estilos para os resultados */
+#resultado, #resultado-filtro {
+    transition: opacity 0.3s;
+}
+
+/* Destaque para o prazo de pagamento */
+.prazo-destaque {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.prazo-pronto {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.prazo-30 {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.prazo-60 {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.prazo-90 {
+    background-color: #f8d7da;
+    color: #842029;
+}

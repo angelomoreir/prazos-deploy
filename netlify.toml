@@ -1,7 +1,10 @@
 [build]
   base = "/"
   publish = "static_site"
-  command = "python app.py init_db"
+  command = "pip install -r requirements.txt && python app.py init_db"
+
+[build.environment]
+  PYTHON_VERSION = "3.9"
 
 [[redirects]]
   from = "/*"

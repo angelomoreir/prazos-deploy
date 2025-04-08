@@ -2,25 +2,12 @@ from flask import Flask, render_template, request, jsonify, g, redirect, url_for
 import sqlite3
 import os
 import sys
-import psycopg2
-import psycopg2.extras
 
 # Configuração da aplicação
 app = Flask(__name__)
 
 # Determinar o caminho do banco de dados
-if os.environ.get('NETLIFY'):  # Verifica se estamos em ambiente de produção
-    # Caminho fixo para o banco de dados em produção
-    app.config['DATABASE'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db')
-else:
-    # Ambiente local
-    if getattr(sys, 'frozen', False):
-        # Executável PyInstaller
-        base_path = os.path.dirname(sys.executable)
-        app.config['DATABASE'] = os.path.join(base_path, 'database.db')
-    else:
-        # Modo de desenvolvimento
-        app.config['DATABASE'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db')
+app.config['DATABASE'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db')
 
 # Funções para conexão com o banco de dados
 def get_db():
